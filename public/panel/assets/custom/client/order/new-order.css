@@ -1,0 +1,26 @@
+/* Pilih Sosmed */
+.pilih-sosmed [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* CHECKED STYLES */
+.pilih-sosmed [type=radio]:checked+.label-sosmed img {
+    /* Make img colored */
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+/* IMAGE STYLES */
+.label-sosmed img {
+    cursor: pointer;
+    transition: filter 0.3s;
+    margin: 4px 3px;
+    /* Make img black and white */
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/* END Pilih Sosmed */
