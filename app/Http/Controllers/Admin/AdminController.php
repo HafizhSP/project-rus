@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -144,5 +145,10 @@ class AdminController extends Controller
         } else {
             return redirect()->route('admin.index')->withErrors("Admin Not Found/Admin ID Wrong!");
         }
+
+        // Update Last Changes
+        $admin->update([
+            'updated_at'    => Carbon::now()->toDateTimeString(),
+        ]);
     }
 }
